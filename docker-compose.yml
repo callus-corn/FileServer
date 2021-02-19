@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+#  db:
+#    build: './db'
+#    environment: 
+#      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_DATABASE: mysql
+#      MYSQL_USER: mysql
+#      MYSQL_PASSWORD: mysql
+#      TZ: 'Asia/Tokyo'
+#    volumes:
+#      - ./db/data:/var/lib/mysql
+#      - ./db/init:/docker-entrypoint-initdb.d
+#    ports: 
+#      - 3306:3306
+#    restart: always
+  
+  back:
+    build: './back'
+    volumes:
+      - ./back/home:/back/home
+    restart: always
