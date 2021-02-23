@@ -17,4 +17,4 @@ jobs:
       run: |
         echo "$SECRET_KEY" > secret_key
         chmod 600 secret_key
-        ssh -oStrictHostKeyChecking=no ${SSH_USER}@${SSH_ADDR} -i secret_key "sudo git pull origin main && sudo docker-compose up -d"
+        ssh -oStrictHostKeyChecking=no ${SSH_USER}@${SSH_ADDR} -i secret_key "sudo git pull origin main && sudo docker-compose down && sudo docker-compose up -d"
