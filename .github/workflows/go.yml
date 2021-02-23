@@ -2,9 +2,11 @@ name: Go
 
 on:
   push:
-    branches: [ $default-branch ]
+    branches:
+      - main
   pull_request:
-    branches: [ $default-branch ]
+    branches: 
+      - main
 
 jobs:
 
@@ -16,10 +18,12 @@ jobs:
     - name: Set up Go
       uses: actions/setup-go@v2
       with:
-        go-version: 1.15
+        go-version: 1.16
 
     - name: Build
       run: go build -v ./...
+      working-directory: ./back
 
     - name: Test
       run: go test -v ./...
+      working-directory: ./back
